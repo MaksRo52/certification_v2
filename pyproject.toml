@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "certification-v2-2"
+version = "0.1.0"
+description = ""
+authors = ["MaksRo52 <romancov_dzr@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
