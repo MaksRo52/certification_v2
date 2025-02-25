@@ -10,7 +10,7 @@ class Post(models.Model):
     content = models.TextField(verbose_name='Текст')
     picture = models.ImageField(verbose_name='Изображение', **NULLABLE)
     owner = models.ForeignKey(User, verbose_name='Автор',
-                              on_delete=models.SET_NULL)
+                              on_delete=models.SET_NULL, **NULLABLE)
     created_at = models.DateTimeField(auto_now_add=True,
                                       verbose_name='Дата создания')
     updated_at = models.DateTimeField(auto_now=True,
@@ -29,7 +29,7 @@ class Commentary(models.Model):
     post = models.ForeignKey(Post, verbose_name='Пост',
                               on_delete=models.CASCADE)
     owner = models.ForeignKey(User, verbose_name='Автор',
-                              on_delete=models.SET_NULL)
+                              on_delete=models.SET_NULL, **NULLABLE)
     content = models.TextField(verbose_name='Текст')
     created_at = models.DateTimeField(auto_now_add=True,
                                       verbose_name='Дата создания')

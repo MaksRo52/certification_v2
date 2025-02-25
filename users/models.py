@@ -22,14 +22,11 @@ class User(AbstractUser):
         max_length=100,
         verbose_name="Номер телефона",
         help_text="Введите номер мобильного телефона",
-        blank=True,
         **NULLABLE
     )
     date_of_birth = models.DateField(
         verbose_name="Дата рождения",
         help_text="Введите вашу дату рождения",
-        blank=True,
-        null=True,
         **NULLABLE)
     created_at = models.DateField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateField(auto_now=True, verbose_name="Дата редактирования")
