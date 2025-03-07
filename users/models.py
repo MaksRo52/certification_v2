@@ -12,12 +12,6 @@ class User(AbstractUser):
         help_text="Введите ваш логин, например i.ivanov",
         unique=True,
     )
-    password = models.CharField(
-        max_length=128,
-        verbose_name="Пароль",
-        help_text="Введите ваш пароль",
-        **NULLABLE,
-    )
     phone_number = models.CharField(
         max_length=100,
         verbose_name="Номер телефона",

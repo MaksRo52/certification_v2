@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from rest_framework.generics import CreateAPIView, RetrieveAPIView, \
-    UpdateAPIView, DestroyAPIView
+from rest_framework.generics import (CreateAPIView, DestroyAPIView,
+                                     RetrieveAPIView, UpdateAPIView)
 
 from main.models import Commentary
-from main.serializers import PostSerializer, CommentarySerializer
+from main.serializers import CommentarySerializer, PostSerializer
 
 # Вьюсет для постов
 
