@@ -57,6 +57,10 @@ IsAuthenticated → Можно создавать посты и коммента
 git clone https://github.com/MaksRo52/certification_v2.git
 cd твой-репозиторий
 
+Устанавливаем зависимости при помощи poetry:
+
+poetry update
+
 Выполняем миграции:
 
 python manage.py migrate
