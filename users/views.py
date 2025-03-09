@@ -18,15 +18,18 @@ class UserCreateApiView(CreateAPIView):
         user.set_password(user.password)
         user.save()
 
+
 class UserRetrieveApiView(RetrieveAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
-    permission_classes = [IsAuthenticated | IsAdmin ]
+    permission_classes = [IsAuthenticated | IsAdmin]
+
 
 class UserUpdateApiView(UpdateAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = [IsAdmin | IsUser]
+
 
 class UserDestroyApiView(DestroyAPIView):
     serializer_class = UserSerializer
