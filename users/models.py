@@ -28,6 +28,7 @@ class User(AbstractUser):
     created_at = models.DateField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateField(auto_now=True, verbose_name="Дата редактирования")
 
+
     class Meta:
         verbose_name = "Пользователь"
         verbose_name_plural = "Пользователи"
