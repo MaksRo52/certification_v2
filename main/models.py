@@ -1,13 +1,15 @@
 from django.db import models
 
-from main.validators import validate_title, validate_age
+from main.validators import validate_age, validate_title
 from users.models import User
 
 NULLABLE = {"null": True, "blank": True}
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100, verbose_name="Заголовок", validators=[validate_title])
+    title = models.CharField(
+        max_length=100, verbose_name="Заголовок", validators=[validate_title]
+    )
     content = models.TextField(verbose_name="Текст")
     picture = models.ImageField(verbose_name="Изображение", **NULLABLE)
     owner = models.ForeignKey(

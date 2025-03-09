@@ -17,7 +17,7 @@ class PostAdmin(admin.ModelAdmin):
 
     def owner_link(self, obj):
         if obj.owner:
-            admin_url = reverse('admin:users_user_change', args=[obj.owner.id])
+            admin_url = reverse("admin:users_user_change", args=[obj.owner.id])
             return admin.utils.format_html(f'<a href="{admin_url}">{obj.owner}</a>')
         return "Автора нет"
 

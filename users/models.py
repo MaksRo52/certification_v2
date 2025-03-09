@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-from users.validators import validate_password, validate_email
+from users.validators import validate_email, validate_password
 
 NULLABLE = {"null": True, "blank": True}
 
@@ -21,13 +21,14 @@ class User(AbstractUser):
         **NULLABLE
     )
     password = models.CharField(verbose_name="Пароль", validators=[validate_password])
-    email = models.EmailField(unique=True,verbose_name="Электронная почта" ,validators=[validate_email])
+    email = models.EmailField(
+        unique=True, verbose_name="Электронная почта", validators=[validate_email]
+    )
     date_of_birth = models.DateField(
         verbose_name="Дата рождения", help_text="Введите вашу дату рождения", **NULLABLE
     )
     created_at = models.DateField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateField(auto_now=True, verbose_name="Дата редактирования")
-
 
     class Meta:
         verbose_name = "Пользователь"

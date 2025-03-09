@@ -10,6 +10,7 @@ def validate_password(value):
         raise ValidationError("Пароль должен содержать хотя бы одну букву.")
     return value
 
+
 def validate_email(value):
     allowed_domains = {"mail.ru", "yandex.ru"}
     domain = value.split("@")[-1]
